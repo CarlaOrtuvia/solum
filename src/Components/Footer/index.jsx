@@ -1,5 +1,5 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
+
 import Navbar from 'react-bootstrap/Navbar';
 import "./Footer.css"
 
@@ -7,7 +7,7 @@ function Footer() {
     return (
 
         <Navbar className="footer fixed-bottom">
-        <Container classname="justify-content-center">
+        <div className="footer-content">
           <Navbar.Brand href="#home">
             <img
               src="/images/instagram.svg"
@@ -35,7 +35,7 @@ function Footer() {
               alt="LinkedIn"
             />
           </Navbar.Brand>
-        </Container>
+        </div>
       </Navbar>
       
       

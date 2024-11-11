@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,7 +10,8 @@ function Barnav() {
       <>
        <Navbar>
         <Container style={{backgroundColor: "transparent"}}>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand >
+        <NavLink to="/" style={{ textDecoration: "none" }}>
             <img
               alt=""
               src="/images/8-removebg-preview.png"
@@ -16,12 +19,13 @@ function Barnav() {
               height="100"
               className="d-inline-block "
             />{' '}
-           <span style={{ color: "#FFF5E4", fontWeight: "bold", fontSize: "1.2em", marginTop:"15px" }}> SOLUM ARG.</span>
+           <span style={{ color: "#FFF5E4", fontWeight: "bold", fontSize: "1.2em", marginTop:"15px" }}> SOLUCIONES AMBIENTALES</span>
+           </NavLink>
           </Navbar.Brand>
-          <Nav className="mt-1">
-            <Nav.Link href="#home" style={{ color: "#FFF5E4", fontWeight: "bold", fontSize: "1.2em", marginTop:"15px" }}>INICIO</Nav.Link>
-            <Nav.Link href="#features"style={{ color: "#FFF5E4", fontWeight: "bold", fontSize: "1.2em", marginTop:"15px" }}>NOSOTROS</Nav.Link>
-            <Nav.Link href="#pricing"style={{ color: "#FFF5E4", fontWeight: "bold", fontSize: "1.2em", marginTop:"15px" }}>CONTACTO</Nav.Link>
+          <Nav className="ml-4">
+            <NavLink to="/" style={ linkStyle }>INICIO</NavLink>
+            <NavLink to="/Nosotros"style={ linkStyle }>NOSOTROS</NavLink>
+            <NavLink to= "/Contacto" style={ linkStyle }>CONTACTO</NavLink>
           </Nav>
         </Container>
       </Navbar>
@@ -29,5 +33,13 @@ function Barnav() {
        </>
     );
   }
+
+  const linkStyle = {
+    color: "#FFF5E4",  
+    fontWeight: "bold",
+    fontSize: "1.2em",    
+   textDecoration: "none" // Elimina el subrayado
+  };
+  
   
   export default Barnav;
